@@ -33,3 +33,8 @@ Next.js 15 App Router, TypeScript, Vercel, pnpm.
 React Three Fiber on the Three.js WebGPU entry, TSL for materials, post, and compute, with an automatic WebGL2 fallback.
 Local ENU tangent plane anchored at each city's centroid, metric throughout; never Web Mercator for geometry.
 astronomy-engine for sun position (refraction on), pinned to the city's IANA zone.
+
+Data
+The snapshots in data/cities/ are the single source; nothing is fetched at build or runtime. Every city folder holds footprints.geojson (EPSG:3857 building polygons, height in AVG_HEIGHT metres above grade), manifest.json (dataset, license, zone, height accuracy per source), and network.json (the OpenStreetMap drivable road network for the catchment). Toronto additionally carries the hand-curated ground truth (known-heights, known-routes, cordon, traffic-counts, study-regions) that the verify:* scripts check against; that ground truth is a Toronto regression asset, not a per-city gate.
+
+Attribution: City of Toronto 3D Massing 2025 (Open Government Licence - Toronto); NYC Open Data Building Footprints; road networks and OSM-ingested buildings, OpenStreetMap contributors (ODbL).
