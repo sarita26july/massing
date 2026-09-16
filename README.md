@@ -11,3 +11,12 @@ A real slice of a real city, every building extruded from its own recorded heigh
 A WebGPU rendering pipeline: physically based materials, image-based lighting, cascaded sun shadows, and a node-based post stack (GTAO, bloom, fog, AgX tone mapping), tuned for a cinematic look in real time.
 A live simulation: time of day driven by real solar position in the city's own time zone, traffic flow on the real street network, and growth, all reacting when you reshape the city.
 A professional editor feel: orbit and fly cameras, in-world selection, transform gizmos, and natural-language edits that resolve to the same bounded operations.
+Cities
+Each city is one folder under data/cities/<id>/ with canonical filenames, resolved through src/model/cities.ts. The app loads Toronto by default and takes ?city=<id>.
+
+id	Neighborhood	Polygons	Heights	Zone
+toronto	St. Lawrence, Toronto	1315	City of Toronto 3D Massing 2025, measured	America/Toronto
+nyc	Lower Manhattan, New York	1013	NYC Open Data footprints, LiDAR height_roof	America/New_York
+nyc-levels	Lower Manhattan (levels variant)	1013	same geometry, heights as the estimated tier	America/New_York
+mexico	Cuauhtemoc, Mexico City	172	OSM tags, the thin-data case	America/Mexico_City
+A building's height comes from the best available source, in order of trust: city LiDAR, then the OSM height tag, then building:levels times an assumed storey height. The tier rides with the building as HEIGHT_SRC, so a consequence computed from estimated heights reads as less trustworthy than one computed from measured heights. A building with no height in any tier is excluded, never defaulted.
