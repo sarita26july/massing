@@ -20,3 +20,7 @@ nyc	Lower Manhattan, New York	1013	NYC Open Data footprints, LiDAR height_roof	A
 nyc-levels	Lower Manhattan (levels variant)	1013	same geometry, heights as the estimated tier	America/New_York
 mexico	Cuauhtemoc, Mexico City	172	OSM tags, the thin-data case	America/Mexico_City
 A building's height comes from the best available source, in order of trust: city LiDAR, then the OSM height tag, then building:levels times an assumed storey height. The tier rides with the building as HEIGHT_SRC, so a consequence computed from estimated heights reads as less trustworthy than one computed from measured heights. A building with no height in any tier is excluded, never defaulted.
+
+nyc-levels is not a separate neighborhood. It is nyc geometry with the heights relabeled to the weakest tier, the A/B that shows what the confidence model does when the data gets thin.
+
+Onboarding a city is offline and one command, pnpm ingest:city <id>, followed by pnpm verify:structure <id>. The structural gate is not a correctness gate: a city can pass every structural check and still carry garbage heights, which is exactly why the height tier travels with every consequence.
