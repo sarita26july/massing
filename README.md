@@ -27,3 +27,9 @@ Onboarding a city is offline and one command, pnpm ingest:city <id>, followed by
 
 The one line
 Spectacle and feel are primary; accuracy is secondary. The one line never crossed is dressing invented simulation as measured authority. Grounded values (real building heights, real road geometry) read as real; simulated values (flow, growth, weather, agents) read as part of the simulated world.
+
+Stack
+Next.js 15 App Router, TypeScript, Vercel, pnpm.
+React Three Fiber on the Three.js WebGPU entry, TSL for materials, post, and compute, with an automatic WebGL2 fallback.
+Local ENU tangent plane anchored at each city's centroid, metric throughout; never Web Mercator for geometry.
+astronomy-engine for sun position (refraction on), pinned to the city's IANA zone.
