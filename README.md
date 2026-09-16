@@ -24,3 +24,6 @@ A building's height comes from the best available source, in order of trust: cit
 nyc-levels is not a separate neighborhood. It is nyc geometry with the heights relabeled to the weakest tier, the A/B that shows what the confidence model does when the data gets thin.
 
 Onboarding a city is offline and one command, pnpm ingest:city <id>, followed by pnpm verify:structure <id>. The structural gate is not a correctness gate: a city can pass every structural check and still carry garbage heights, which is exactly why the height tier travels with every consequence.
+
+The one line
+Spectacle and feel are primary; accuracy is secondary. The one line never crossed is dressing invented simulation as measured authority. Grounded values (real building heights, real road geometry) read as real; simulated values (flow, growth, weather, agents) read as part of the simulated world.
